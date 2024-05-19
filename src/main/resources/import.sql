@@ -1,0 +1,2 @@
+INSERT  INTO USUARIO (first_name, last_name, email, password, enabled) VALUES ('Fernando', 'Perez', 'fer@gmail.com', '123456', true);
+INSERT  INTO USUARIO (first_name, last_name, email, password, enabled) VALUES ('Juan', 'Miranda', 'juan@gmail.com', '123456', true);
