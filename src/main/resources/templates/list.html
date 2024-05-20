@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,6 +7,9 @@
 </head>
 <body>
 <div class="container my-3">
+    <form id="logoutForm" th:action="@{/logout}" method="post">
+        <button type="submit" class="btn btn-danger">Cerrar Sesion </button>
+    </form>
 <h1>Lista de Usuarios</h1>
     <table class="table ">
         <tr>
@@ -24,6 +27,13 @@
     </table>
 </div>
 
+<footer>
 
+
+    <div class="container" sec:authorize="isAuthenticated()">
+
+        <p>Usuario Logeado: <span sec:authentication="name"></span>  | Roles: <span sec:authentication="principal.authorities"></span></p>
+    </div>
+</footer>
 </body>
 </html>

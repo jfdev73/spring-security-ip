@@ -12,12 +12,12 @@ import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/usuario")
+//@RequestMapping("/usuario")
 public class UsuarioController {
 
     private final UsuarioService usuarioService;
 
-    @GetMapping("list")
+    @GetMapping({"/list", "/"})
     public String inicio(Model model) {
         List<Usuario> usuarios = usuarioService.findAll();
         model.addAttribute("usuarios", usuarios);
